@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="uk" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Про нас — Toscana Restaurant & Terrace, Самбір</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandDark: '#111111',
+                        brandGold: '#E0A96D',
+                        brandGoldDark: '#c79257'
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-stone-50 text-brandDark font-sans antialiased selection:bg-brandGold selection:text-white">
+
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-stone-200 h-20 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="text-xl md:text-2xl font-bold tracking-wider text-brandDark flex items-center gap-2">
+                <i class="fa-solid fa-utensils text-brandGold"></i>
+                <span>TOSCANA</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm tracking-wide">
+                <a href="#" data-i18n="nav_home" class="hover:text-brandGold transition">Головна</a>
+                <a href="#" data-i18n="nav_about" class="text-brandGold font-semibold transition">Про нас</a>
+                <a href="#" data-i18n="nav_menu" class="hover:text-brandGold transition">Меню</a>
+                <a href="#" data-i18n="nav_gallery" class="hover:text-brandGold transition">Галерея</a>
+                <a href="#" data-i18n="nav_booking" class="hover:text-brandGold transition">Забронювати</a>
+                <a href="#" data-i18n="nav_contacts" class="hover:text-brandGold transition">Контакти</a>
+            </nav>
+
+            <!-- Actions & Lang Switcher -->
+            <div class="flex items-center gap-4">
+                <!-- Language Switcher -->
+                <div class="flex bg-stone-100 p-1 rounded-full border border-stone-200 text-xs font-semibold">
+                    <button onclick="setLang('uk')" class="px-2.5 py-1 rounded-full transition hover:bg-white text-stone-700 focus:bg-brandGold focus:text-white active">UA</button>
+                    <button onclick="setLang('ru')" class="px-2.5 py-1 rounded-full transition hover:bg-white text-stone-700 focus:bg-brandGold focus:text-white">RU</button>
+                    <button onclick="setLang('en')" class="px-2.5 py-1 rounded-full transition hover:bg-white text-stone-700 focus:bg-brandGold focus:text-white">EN</button>
+                </div>
+
+                <!-- Call Button -->
+                <a href="tel:+380676755101" class="hidden lg:flex items-center gap-2 bg-stone-900 text-white px-4 py-2.5 rounded-full text-sm font-medium hover:bg-brandGold transition shadow-md">
+                    <i class="fa-solid fa-phone text-xs"></i>
+                    <span data-i18n="btn_call">Зателефонувати</span>
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-stone-800 text-xl focus:outline-none p-2">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-white border-b border-stone-200 shadow-xl py-6 px-6 flex flex-col gap-4 text-center font-medium">
+            <a href="#" data-i18n="nav_home" class="py-2 hover:text-brandGold transition">Головна</a>
+            <a href="#" data-i18n="nav_about" class="py-2 text-brandGold font-semibold transition">Про нас</a>
+            <a href="#" data-i18n="nav_menu" class="py-2 hover:text-brandGold transition">Меню</a>
+            <a href="#" data-i18n="nav_gallery" class="py-2 hover:text-brandGold transition">Галерея</a>
+            <a href="#" data-i18n="nav_booking" class="py-2 hover:text-brandGold transition">Забронювати</a>
+            <a href="#" data-i18n="nav_contacts" class="py-2 hover:text-brandGold transition">Контакти</a>
+            <a href="tel:+380676755101" class="mt-2 bg-brandGold text-white py-3 rounded-xl font-medium shadow-md flex items-center justify-center gap-2">
+                <i class="fa-solid fa-phone"></i>
+                <span data-i18n="btn_call">Зателефонувати</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section (Про нас Header) -->
+    <section class="relative min-h-[50vh] flex items-center justify-center bg-stone-900 text-white overflow-hidden py-20 px-6">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://scontent.xx.fbcdn.net/v/t39.30808-6/274917957_105263158731388_4141697275883279183_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=8v7GZ7sQ2hQQ7kNvgH2V8t1&_nc_zt=23&_nc_ht=scontent.xx&oh=00_AYB3JqC3Vw_5JtQ9Z5bQ9Z5bQ9Z5bQ9Z5bQ9Z5bQ9Z5bQ&oe=662B75A1" alt="Toscana Restaurant & Terrace" class="w-full h-full object-cover object-center filter brightness-50 scale-105 animate-pulse duration-[10000ms]">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/30"></div>
+        </div>
+
+        <div class="relative z-10 max-w-4xl mx-auto text-center space-y-4">
+            <span class="inline-block bg-brandGold/90 text-white text-xs uppercase tracking-widest px-3.5 py-1.5 rounded-full font-semibold shadow-sm" data-i18n="about_badge">Історія та затишок</span>
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-white" data-i18n="about_main_title">Про Toscana Restaurant & Terrace</h1>
+            <p class="text-lg md:text-xl text-stone-200 font-light max-w-2xl mx-auto" data-i18n="about_main_subtitle">Місце, де кожен гість стає частиною нашої великої родини у серці Самбора.</p>
+        </div>
+    </section>
+
+    <!-- Main Content Section: History, Values & Text -->
+    <section class="py-20 px-6 max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            <!-- Text Description -->
+            <div class="space-y-6">
+                <div class="inline-flex items-center gap-2 text-brandGold font-semibold text-sm uppercase tracking-wider">
+                    <i class="fa-solid fa-sparkles"></i>
+                    <span data-i18n="history_subtitle">Наша історія</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-stone-900 tracking-tight" data-i18n="history_title">Затишок, смак та атмосфера у Самборі</h2>
+                <p class="text-stone-600 leading-relaxed text-base" data-i18n="about_text_1">
+                    Toscana Restaurant & Terrace — затишний ресторан та тераса у місті Самбір, розташований за адресою вулиця Шевченка, 45. Заклад пропонує своїм відвідувачам атмосферне місце для відпочинку, смачні страви та напої, а також приємне обслуговування.
+                </p>
+                <p class="text-stone-600 leading-relaxed text-base" data-i18n="about_text_2">
+                    Тераса ресторану є чудовим місцем для проведення часу на свіжому повітрі у теплу пору року. Інтер'єр та атмосфера закладу створюють комфортні умови як для романтичних вечорів, так і для сімейних зустрічей чи святкувань.
+                </p>
+                <p class="text-stone-600 leading-relaxed text-base" data-i18n="about_text_3">
+                    Команда ресторану дбає про якість приготування страв та задоволення кожного гостя. Заклад користується популярністю серед мешканців та гостей Самбора завдяки своїй затишній локації та гостинності.
+                </p>
+            </div>
+
+            <!-- Image Card & Unique Facts -->
+            <div class="space-y-6">
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/3]">
+                    <img src="https://scontent.xx.fbcdn.net/v/t39.30808-6/274917957_105263158731388_4141697275883279183_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=8v7GZ7sQ2hQQ7kNvgH2V8t1&_nc_zt=23&_nc_ht=scontent.xx&oh=00_AYB3JqC3Vw_5JtQ9Z5bQ9Z5bQ9Z5bQ9Z5bQ9Z5bQ9Z5bQ&oe=662B75A1" alt="Toscana Interior" class="w-full h-full object-cover hover:scale-105 transition duration-700">
+                </div>
+
+                <!-- Unique Facts Badges -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="bg-white p-5 rounded-2xl shadow-sm border border-stone-200 flex items-start gap-4">
+                        <div class="bg-amber-100 text-brandGold p-3 rounded-xl text-lg flex-shrink-0">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-stone-900 text-sm" data-i18n="fact_1_title">Ідеальна локація</h4>
+                            <p class="text-stone-500 text-xs mt-1" data-i18n="fact_1_desc">Розташований у центрі Самбора за адресою вул. Шевченка, 45</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl shadow-sm border border-stone-200 flex items-start gap-4">
+                        <div class="bg-amber-100 text-brandGold p-3 rounded-xl text-lg flex-shrink-0">
+                            <i class="fa-solid fa-umbrella-beach"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-stone-900 text-sm" data-i18n="fact_2_title">Літня тераса</h4>
+                            <p class="text-stone-500 text-xs mt-1" data-i18n="fact_2_desc">Має затишну літню терасу для відпочинку на свіжому повітрі</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="bg-stone-100 py-20 px-6 border-y border-stone-200">
+        <div class="max-w-6xl mx-auto text-center space-y-12">
+            <div class="space-y-3">
+                <span class="text-brandGold font-semibold text-xs uppercase tracking-widest" data-i18n="values_subtitle">Наші принципи</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-stone-900" data-i18n="values_title">Чому обирають нас</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Value 1 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-stone-200 hover:shadow-xl transition duration-300 hover:-translate-y-1 text-left">
+                    <div class="w-12 h-12 bg-stone-900 text-brandGold rounded-2xl flex items-center justify-center text-xl mb-6 shadow-md">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-stone-900 mb-2" data-i18n="val_1_title">Висока якість страв</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed" data-i18n="val_1_desc">Ми ретельно підбираємо інгредієнти, щоб кожна страва дарувала справжнє гастрономічне задоволення.</p>
+                </div>
+
+                <!-- Value 2 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-stone-200 hover:shadow-xl transition duration-300 hover:-translate-y-1 text-left">
+                    <div class="w-12 h-12 bg-stone-900 text-brandGold rounded-2xl flex items-center justify-center text-xl mb-6 shadow-md">
+                        <i class="fa-solid fa-face-smile"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-stone-900 mb-2" data-i18n="val_2_title">Гостинність</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed" data-i18n="val_2_desc">Наша команда створює теплу та дружню атмосферу, оточуючи турботою кожного відвідувача.</p>
+                </div>
+
+                <!-- Value 3 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-stone-200 hover:shadow-xl transition duration-300 hover:-translate-y-1 text-left">
+                    <div class="w-12 h-12 bg-stone-900 text-brandGold rounded-2xl flex items-center justify-center text-xl mb-6 shadow-md">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-stone-900 mb-2" data-i18n="val_3_title">Затишна атмосфера</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed" data-i18n="val_3_desc">Ідеальне місце для романтичних вечорів, сімейних обідів та святкових подій у Самборі.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="py-20 px-6 max-w-4xl mx-auto text-center">
+        <span class="text-brandGold font-semibold text-xs uppercase tracking-widest" data-i18n="reviews_subtitle">Відгуки гостей</span>
+        <h2 class="text-3xl font-bold text-stone-900 mt-2 mb-10" data-i18n="reviews_title">Що говорять про нас</h2>
+
+        <div class="bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-stone-200 relative">
+            <div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-brandGold text-white w-12 h-12 rounded-full flex items-center justify-center text-xl shadow-md">
+                <i class="fa-solid fa-quote-left"></i>
+            </div>
+            <div class="flex justify-center gap-1 text-amber-400 mb-4 mt-2">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-stone-700 text-lg md:text-xl italic font-light mb-6" data-i18n="review_text">«Чудове місце у Самборі з приємною атмосферою та смачною кухнею.»</p>
+            <h5 class="font-bold text-stone-900">Google Local Guide</h5>
+            <span class="text-xs text-stone-400 uppercase tracking-wider">Google Maps</span>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-900 text-stone-300 py-16 px-6 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+            <!-- Col 1: Brand -->
+            <div class="space-y-4">
+                <h3 class="text-2xl font-bold text-white tracking-wider flex items-center gap-2">
+                    <i class="fa-solid fa-utensils text-brandGold"></i>
+                    <span>TOSCANA</span>
+                </h3>
+                <p class="text-sm text-stone-400 leading-relaxed" data-i18n="footer_about">Ресторан та тераса у Самборі. Смачна кухня, затишна атмосфера та незабутні емоції для вас та ваших близьких.</p>
+            </div>
+
+            <!-- Col 2: Contacts -->
+            <div class="space-y-4">
+                <h4 class="text-white font-semibold text-lg" data-i18n="footer_contacts">Контакти</h4>
+                <p class="text-sm text-stone-400 flex items-start gap-3">
+                    <i class="fa-solid fa-location-dot text-brandGold mt-1"></i>
+                    <span>вулиця Шевченка, 45, Самбір, Львівська область, Україна, 81400</span>
+                </p>
+                <p class="text-sm text-stone-400 flex items-center gap-3">
+                    <i class="fa-solid fa-phone text-brandGold"></i>
+                    <a href="tel:+380676755101" class="hover:text-white transition">+380 67 675 5101</a>
+                </p>
+                <p class="text-sm text-stone-400 flex items-center gap-3">
+                    <i class="fa-solid fa-clock text-brandGold"></i>
+                    <span data-i18n="footer_hours">Пн-Нд: 10:00 - 23:00</span>
+                </p>
+            </div>
+
+            <!-- Col 3: Socials -->
+            <div class="space-y-4">
+                <h4 class="text-white font-semibold text-lg" data-i18n="footer_socials">Ми в соцмережах</h4>
+                <p class="text-sm text-stone-400" data-i18n="footer_socials_desc">Слідкуйте за нашими новинами та оновленнями у Facebook та Google Maps.</p>
+                <div class="flex gap-4 pt-2">
+                    <a href="https://www.facebook.com/profile.php?id=100063673752042" target="_blank" class="w-10 h-10 bg-stone-800 rounded-full flex items-center justify-center text-white hover:bg-brandGold transition shadow-md">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.google.com/maps/place/Toscana+Restaurant+%26+Terrace/@49.518,23.195,17z/" target="_blank" class="w-10 h-10 bg-stone-800 rounded-full flex items-center justify-center text-white hover:bg-brandGold transition shadow-md">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-stone-800 text-center text-xs text-stone-500">
+            &copy; 2024 Toscana Restaurant & Terrace. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+
+    <!-- MANDATORY I18N SCRIPT -->
+    <script>
+      const i18n = {
+        uk: { 
+          "nav_home": "головна", 
+          "nav_about": "Про нас", 
+          "nav_menu": "Меню", 
+          "nav_gallery": "Галерея", 
+          "nav_booking": "Забронювати", 
+          "nav_contacts": "Контакти", 
+          "btn_call": "Зателефонувати", 
+          "btn_book": "Забронювати", 
+          "hero_btn": "Переглянути меню",
+          "about_badge": "Історія та затишок",
+          "about_main_title": "Про Toscana Restaurant & Terrace",
+          "about_main_subtitle": "Місце, де кожен гість стає частиною нашої великої родини у серці Самбора.",
+          "history_subtitle": "Наша історія",
+          "history_title": "Затишок, смак та атмосфера у Самборі",
+          "about_text_1": "Toscana Restaurant & Terrace — затишний ресторан та тераса у місті Самбір, розташований за адресою вулиця Шевченка, 45. Заклад пропонує своїм відвідувачам атмосферне місце для відпочинку, смачні страви та напої, а також приємне обслуговування.",
+          "about_text_2": "Тераса ресторану є чудовим місцем для проведення часу на свіжому повітрі у теплу пору року. Інтер'єр та атмосфера закладу створюють комфортні умови як для романтичних вечорів, так і для сімейних зустрічей чи святкувань.",
+          "about_text_3": "Команда ресторану дбає про якість приготування страв та задоволення кожного гостя. Заклад користується популярністю серед мешканців та гостей Самбора завдяки своїй затишній локації та гостинності.",
+          "fact_1_title": "Ідеальна локація",
+          "fact_1_desc": "Розташований у центрі Самбора за адресою вул. Шевченка, 45",
+          "fact_2_title": "Літня тераса",
+          "fact_2_desc": "Має затишну літню терасу для відпочинку на свіжому повітрі",
+          "values_subtitle": "Наші принципи",
+          "values_title": "Чому обирають нас",
+          "val_1_title": "Висока якість страв",
+          "val_1_desc": "Ми ретельно підбираємо інгредієнти, щоб кожна страва дарувала справжнє гастрономічне задоволення.",
+          "val_2_title": "Гостинність",
+          "val_2_desc": "Наша команда створює теплу та дружню атмосферу, оточуючи турботою кожного відвідувача.",
+          "val_3_title": "Затишна атмосфера",
+          "val_3_desc": "Ідеальне місце для романтичних вечорів, сімейних обідів та святкових подій у Самборі.",
+          "reviews_subtitle": "Відгуки гостей",
+          "reviews_title": "Що говорять про нас",
+          "review_text": "«Чудове місце у Самборі з приємною атмосферою та смачною кухнею.»",
+          "footer_about": "Ресторан та тераса у Самборі. Смачна кухня, затишна атмосфера та незабутні емоції для вас та ваших близьких.",
+          "footer_contacts": "Контакти",
+          "footer_hours": "Пн-Нд: 10:00 - 23:00",
+          "footer_socials": "Ми в соцмережах",
+          "footer_socials_desc": "Слідкуйте за нашими новинами та оновленнями у Facebook та Google Maps."
+        },
+        ru: { 
+          "nav_home": "Главная", 
+          "nav_about": "О нас", 
+          "nav_menu": "Меню", 
+          "nav_gallery": "Галерея", 
+          "nav_booking": "Забронировать", 
+          "nav_contacts": "Контакты", 
+          "btn_call": "Позвонить", 
+          "btn_book": "Забронировать", 
+          "hero_btn": "Посмотреть меню",
+          "about_badge": "История и уют",
+          "about_main_title": "О Toscana Restaurant & Terrace",
+          "about_main_subtitle": "Место, где каждый гость становится частью нашей большой семьи в сердце Самбора.",
+          "history_subtitle": "Наша история",
+          "history_title": "Уют, вкус и атмосфера в Самборе",
+          "about_text_1": "Toscana Restaurant & Terrace — уютный ресторан и терраса в городе Самбор, расположенный по адресу улица Шевченко, 45. Заведение предлагает своим посетителям атмосферное место для отдыха, вкусные блюда и напитки, а также приятное обслуживание.",
+          "about_text_2": "Терраса ресторана является отличным местом для проведения времени на свежем воздухе в теплое время года. Интерьер и атмосфера заведения создают комфортные условия как для романтических вечеров, так и для семейных встреч или празднований.",
+          "about_text_3": "Команда ресторана заботится о качестве приготовления блюд и удовлетворении каждого гостя. Заведение пользуется популярностью среди жителей и гостей Самбора благодаря своей уютной локации и гостеприимству.",
+          "fact_1_title": "Идеальная локация",
+          "fact_1_desc": "Расположен в центре Самбора по адресу ул. Шевченко, 45",
+          "fact_2_title": "Летняя терраса",
+          "fact_2_desc": "Имеет уютную летнюю террасу для отдыха на свежем воздухе",
+          "values_subtitle": "Наши принципы",
+          "values_title": "Почему выбирают нас",
+          "val_1_title": "Высокое качество блюд",
+          "val_1_desc": "Мы тщательно подбираем ингредиенты, чтобы каждое блюдо дарило истинное гастрономическое удовольствие.",
+          "val_2_title": "Гостеприимство",
+          "val_2_desc": "Наша команда создает теплую и дружескую атмосферу, окружая заботой каждого посетителя.",
+          "val_3_title": "Уютная атмосфера",
+          "val_3_desc": "Идеальное место для романтических вечеров, семейных обедов и праздничных событий в Самборе.",
+          "reviews_subtitle": "Отзывы гостей",
+          "reviews_title": "Что говорят о нас",
+          "review_text": "«Прекрасное место в Самборе с приятной атмосферой и вкусной кухней.»",
+          "footer_about": "Ресторан и терраса в Самборе. Вкусная кухня, уютная атмосфера и незабываемые эмоции для вас и ваших близких.",
+          "footer_contacts": "Контакты",
+          "footer_hours": "Пн-Вс: 10:00 - 23:00",
+          "footer_socials": "Мы в соцсетях",
+          "footer_socials_desc": "Следите за нашими новостями и обновлениями в Facebook и Google Maps."
+        },
+        en: { 
+          "nav_home": "Home", 
+          "nav_about": "About", 
+          "nav_menu": "Menu", 
+          "nav_gallery": "Gallery", 
+          "nav_booking": "Book", 
+          "nav_contacts": "Contacts", 
+          "btn_call": "Call Us", 
+          "btn_book": "Book Now", 
+          "hero_btn": "View Menu",
+          "about_badge": "History & Ambience",
+          "about_main_title": "About Toscana Restaurant & Terrace",
+          "about_main_subtitle": "A place where every guest becomes part of our big family in the heart of Sambir.",
+          "history_subtitle": "Our History",
+          "history_title": "Coziness, Taste & Atmosphere in Sambir",
+          "about_text_1": "Toscana Restaurant & Terrace is a cozy restaurant and terrace in the city of Sambir, located at 45 Shevchenko Street. The venue offers visitors an atmospheric place to relax, delicious dishes and drinks, as well as pleasant service.",
+          "about_text_2": "The restaurant's terrace is a great place to spend time in the fresh air during the warm season. The interior and atmosphere of the establishment create comfortable conditions for both romantic evenings and family gatherings or celebrations.",
+          "about_text_3": "The restaurant team cares about the quality of food preparation and the satisfaction of every guest. The establishment is popular among residents and guests of Sambir thanks to its cozy location and hospitality.",
+          "fact_1_title": "Perfect Location",
+          "fact_1_desc": "Located in the center of Sambir at 45 Shevchenko St.",
+          "fact_2_title": "Summer Terrace",
+          "fact_2_desc": "Features a cozy summer terrace for outdoor relaxation",
+          "values_subtitle": "Our Principles",
+          "values_title": "Why Choose Us",
+          "val_1_title": "High Quality Food",
+          "val_1_desc": "We carefully select ingredients so that every dish delivers true gastronomic pleasure.",
+          "val_2_title": "Hospitality",
+          "val_2_desc": "Our team creates a warm and friendly atmosphere, surrounding every visitor with care.",
+          "val_3_title": "Cozy Atmosphere",
+          "val_3_desc": "An ideal place for romantic evenings, family lunches, and celebrations in Sambir.",
+          "reviews_subtitle": "Guest Reviews",
+          "reviews_title": "What They Say About Us",
+          "review_text": "«A wonderful place in Sambir with a pleasant atmosphere and delicious cuisine.»",
+          "footer_about": "Restaurant and terrace in Sambir. Delicious cuisine, cozy atmosphere, and unforgettable emotions for you and your loved ones.",
+          "footer_contacts": "Contacts",
+          "footer_hours": "Mon-Sun: 10:00 - 23:00",
+          "footer_socials": "Social Media",
+          "footer_socials_desc": "Follow our news and updates on Facebook and Google Maps."
+        }
+      };
+      function setLang(lang) {
+        localStorage.setItem('site_lang', lang);
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (i18n[lang] && i18n[lang][key]) el.innerText = i18n[lang][key];
+        });
+        document.documentElement.lang = lang;
+      }
+      document.addEventListener('DOMContentLoaded', () => {
+        const savedLang = localStorage.getItem('site_lang') || 'uk';
+        setLang(savedLang);
+      });
+    </script>
+</body>
+</html>
